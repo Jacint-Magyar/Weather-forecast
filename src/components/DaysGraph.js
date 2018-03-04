@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@vx/grid';
 import { Group } from '@vx/group';
-import { curveBasis, curveMonotoneX } from '@vx/curve';
-import { LinearGradient } from '@vx/gradient';
-import { appleStock, genDateValue } from '@vx/mock-data';
+import { curveMonotoneX } from '@vx/curve';
 import { AxisLeft, AxisBottom } from '@vx/axis';
-import { AreaClosed, LinePath, Line } from '@vx/shape';
+import { LinePath } from '@vx/shape';
 import { scaleTime, scaleLinear } from '@vx/scale';
 import { GlyphDot } from '@vx/glyph';
-import { Dot } from '@vx/glyph';
 import { extent, max, min } from 'd3-array';
 import moment from 'moment';
 
@@ -29,12 +26,10 @@ const DaysGraph = (props) => {
 
     const data = [];
     props.city.list.forEach((item) => {
-      if (item.dt_txt.substring(11, 13) === "00" || "12") {
+      if (item.dt_txt.substring(11, 13) === "12") {
         data.push(item)
       }
     });
-
-    console.log(data);
 
     const width = 800;
     const height = 400;
@@ -62,14 +57,6 @@ const DaysGraph = (props) => {
 
     return (
       <svg width={width} height={height}>
-        {/* <rect
-          x={0}
-          y={0}
-          width={width}
-          height={height}
-          fill="#f2f2f2"
-          rx={14}
-        /> */}
         <Grid
           top={margin.top}
           left={margin.left}
@@ -96,16 +83,6 @@ const DaysGraph = (props) => {
             label={'Temperature (°C)'}
             stroke={'black'}
             tickTextFill={'#ccc'} />
-          {/* <AreaClosed
-            data={data}
-            xScale={xScale}
-            yScale={yScale}
-            x={x}
-            y={y}
-            strokeWidth={2}
-            stroke={'transparent'}
-            fill={"url(#linear)"}
-            curve={curveBasis} /> */}
           <LinePath
             data={data}
             xScale={xScale}

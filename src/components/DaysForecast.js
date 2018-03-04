@@ -36,9 +36,9 @@ const DaysForecast = (props) => {
     const highestTemps = [];
     const prevalentWeatherIcon = [];
     const dates = [];
-    
+
     allDays.forEach((day) => {
-      
+
       const sortLowest = day.sort((a, b) => {
         return a.main.temp_max - b.main.temp_max;
       });
@@ -51,6 +51,7 @@ const DaysForecast = (props) => {
       
       prevalentWeatherIcon.push(occurence(day).weather[0].icon);
 
+      // ez nem mukodik ha csak 1 object van valamelyik napban (a nap vege fele, amikor csak a 21:00-as adat van)
       dates.push(day[0].dt_txt.substring(5, 10))
       
     });
