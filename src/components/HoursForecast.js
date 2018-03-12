@@ -8,6 +8,9 @@ const HoursForecast = (props) => {
   if (props.gotData) {
     //console.log(props.city.list[0].dt_txt);
     const shortenedArray = props.city.list.slice(0, 7);
+    const test = shortenedArray.slice(0,1);
+    // const testa = [...test];
+    // console.log(testa);
 
     hours = shortenedArray.map((elem, index) => {
       return <Hours

@@ -27,15 +27,15 @@ const DaysForecast = (props) => {
     const day3 = dataList.slice(indexes[1], indexes[2]);
     const day4 = dataList.slice(indexes[2], indexes[3]);
     const day5 = dataList.slice(indexes[3], indexes[4]);
-    const day6 = dataList.slice(indexes[4]);
     // Make one array of all days
-    const allDays = [day1, day2, day3, day4, day5, day6];
+    const allDays = [day1, day2, day3, day4, day5];
 
     // Find the lowest and highest temperatures as well as the icons to display
     const lowestTemps = [];
     const highestTemps = [];
     const prevalentWeatherIcon = [];
     const dates = [];
+    console.log(allDays);
 
     allDays.forEach((day) => {
 
@@ -48,9 +48,8 @@ const DaysForecast = (props) => {
         return b.main.temp_max - a.main.temp_max;
       });
       highestTemps.push(sortHighest[0].main.temp_max);
-      
+      console.log(day);
       prevalentWeatherIcon.push(occurence(day).weather[0].icon);
-
       // ez nem mukodik ha csak 1 object van valamelyik napban (a nap vege fele, amikor csak a 21:00-as adat van)
       dates.push(day[0].dt_txt.substring(5, 10))
       
@@ -60,8 +59,7 @@ const DaysForecast = (props) => {
       [lowestTemps[1], highestTemps[1], prevalentWeatherIcon[1], dates[1]],
       [lowestTemps[2], highestTemps[2], prevalentWeatherIcon[2], dates[2]],
       [lowestTemps[3], highestTemps[3], prevalentWeatherIcon[3], dates[3]],
-      [lowestTemps[4], highestTemps[4], prevalentWeatherIcon[4], dates[4]],
-      [lowestTemps[5], highestTemps[5], prevalentWeatherIcon[5], dates[5]]
+      [lowestTemps[4], highestTemps[4], prevalentWeatherIcon[4], dates[4]]
     ];
     
     days = daysArray.map((elem, index) => {

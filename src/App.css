@@ -13,9 +13,9 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
   padding: 20px;
   color: white;
+  margin-bottom: 1rem;
 }
 
 .App-title {
@@ -27,10 +27,6 @@
   to { transform: rotate(360deg); }
 }
 
-form {
-  margin: 2rem 0;
-}
-
 .container {
   width: 100%;
   padding: 0 1rem;
@@ -39,6 +35,7 @@ form {
 ul {
   list-style: none;
   display: flex;
+  margin: 0 auto;
 }
 
 li {
@@ -121,12 +118,14 @@ ul {
   padding: .5rem 0;
 }
 
-.unit:first-child {
-  background-color: #eee;
-  border: 1px solid #ddd;
-  border-radius: 3px;
+input, button {
+  padding: .5rem;
+  font-size: 16px;
+  margin-right: 1rem;
 }
 
-svg {
-  color: red;
+button {
+  background-color: #0099ff;
+  color: white;
+  border: 1px solid #0281d6;
 }

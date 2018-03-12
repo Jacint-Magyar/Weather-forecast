@@ -31,8 +31,8 @@ const DaysGraph = (props) => {
       }
     });
 
-    const width = 800;
-    const height = 400;
+    const width = 1000;
+    const height = 500;
     const margin = {
       top: 60,
       bottom: 60,
@@ -63,6 +63,7 @@ const DaysGraph = (props) => {
           xScale={xScale}
           yScale={yScale}
           stroke="#ccc"
+          fill="#eee"
           width={xMax}
           height={yMax}
           numTicksRows={numTicksForHeight(height)}
