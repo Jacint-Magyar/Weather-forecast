@@ -12,10 +12,9 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #4d4d4d;
   padding: 20px;
   color: white;
-  margin-bottom: 1rem;
 }
 
 .App-title {
@@ -29,7 +28,31 @@
 
 .container {
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 2rem;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a0d8ef+0,ddf1f9+65,feffff+100 */
+  background: #a0d8ef; /* Old browsers */
+  background: -moz-linear-gradient(top,  #a0d8ef 0%, #ddf1f9 65%, #feffff 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #a0d8ef 0%,#ddf1f9 65%,#feffff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #a0d8ef 0%,#ddf1f9 65%,#feffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0d8ef', endColorstr='#feffff',GradientType=0 ); /* IE6-9 */
+}
+
+form {
+  margin-bottom: 1rem;
+}
+
+.help {
+  color:#b3b3b3;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.help img {
+  display: inline-block;
+  height: 16px;
+  position: relative;
+  top: 3px;
+  margin-right: .5em;
 }
 
 ul {
@@ -50,6 +73,17 @@ li {
   font-size: 32px;
   font-weight: 300;
   margin-bottom: 1rem;
+  color: #737373;
+}
+
+.city-name {
+  color: #222;
+}
+
+.current-city {
+  font-size: 18px;
+  display: inline-block;
+  margin-bottom: .5rem;
 }
 
 .view-buttons {
@@ -65,15 +99,13 @@ li {
   cursor: pointer;
 }
 
+.btn:hover {
+  text-decoration: underline;
+}
+
 .btn-active {
   text-decoration: underline;
   color: #222;
-}
-
-.name span:nth-child(2), .name span:nth-child(3) {
-  color: #595959;
-  display: inline-block;
-  margin-left: 1rem;
 }
 
 .icon {
@@ -84,6 +116,7 @@ li {
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 1rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 .celsius {
@@ -94,6 +127,8 @@ li {
 .time {
   color: #595959;
   font-size: 18px;
+  border-bottom: 1px solid #a6a6a6;
+  padding-bottom: .5em;
 }
 
 .description {
@@ -116,6 +151,11 @@ ul {
 
 .unit {
   padding: .5rem 0;
+  border-right: 1px solid #ccc;
+}
+
+.unit:last-child {
+  border-right: none;
 }
 
 input, button {
@@ -125,7 +165,7 @@ input, button {
 }
 
 button {
-  background-color: #0099ff;
+  background-color: #2ab0ed;
   color: white;
-  border: 1px solid #0281d6;
+  border: 1px solid #1296d3;
 }

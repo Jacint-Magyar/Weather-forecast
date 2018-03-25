@@ -15,7 +15,7 @@ class Searchbox extends Component {
       const error = 'Please enter a location';
       this.setState(() => ({error}));
     } else {
-      this.props.fetchData(this.searchInput.value);
+      this.props.fetchData(this.searchInput.value, false);
       this.setState(() => ({error: undefined}));
     }
     this.searchInput.value = '';
@@ -23,11 +23,17 @@ class Searchbox extends Component {
   
   render() {
     return (
-      <form onSubmit={this.handleSearch.bind(this)}>
-        <input ref={input => this.searchInput = input} type="text" placeholder="Enter your location"/>
-        <button>Get Weather Data</button>
-        {this.state.error && <span>{this.state.error}</span>}
-      </form>
+      <div>
+        <form onSubmit={this.handleSearch.bind(this)}>
+          <input ref={input => this.searchInput = input} type="text" placeholder="Enter your location"/>
+          <button>Get Weather Data</button>
+        </form>
+        {this.state.error && <div>{this.state.error}</div>}
+        <div className="help">
+          <img src="./icon.png" alt=""/>
+          Not the location you meant? Try searching with the country-code (London,UK or London,GB).
+        </div>
+      </div>
     );
   }
 }

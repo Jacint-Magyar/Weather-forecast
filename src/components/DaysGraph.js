@@ -100,7 +100,8 @@ const DaysGraph = (props) => {
                     cx={xScale(x(d))}
                     cy={yScale(y(d))}
                     r={8}
-                    fill='#fff'
+                    fill='rgb(221,241,249)
+                    '
                   >
                     <text
                       x={xScale(x(d))}

@@ -22,11 +22,11 @@ const DaysForecast = (props) => {
     }, dataList);
 
     // Divide dataList into days 
-    const day1 = dataList.slice(0, indexes[0]);
-    const day2 = dataList.slice(indexes[0], indexes[1]);
-    const day3 = dataList.slice(indexes[1], indexes[2]);
-    const day4 = dataList.slice(indexes[2], indexes[3]);
-    const day5 = dataList.slice(indexes[3], indexes[4]);
+    const day1 = dataList.slice(0, indexes[1]);
+    const day2 = dataList.slice(indexes[1], indexes[2]);
+    const day3 = dataList.slice(indexes[2], indexes[3]);
+    const day4 = dataList.slice(indexes[3], indexes[4]);
+    const day5 = dataList.slice(indexes[4]);
     // Make one array of all days
     const allDays = [day1, day2, day3, day4, day5];
 
@@ -35,7 +35,6 @@ const DaysForecast = (props) => {
     const highestTemps = [];
     const prevalentWeatherIcon = [];
     const dates = [];
-    console.log(allDays);
 
     allDays.forEach((day) => {
 
@@ -48,9 +47,9 @@ const DaysForecast = (props) => {
         return b.main.temp_max - a.main.temp_max;
       });
       highestTemps.push(sortHighest[0].main.temp_max);
-      console.log(day);
+
       prevalentWeatherIcon.push(occurence(day).weather[0].icon);
-      // ez nem mukodik ha csak 1 object van valamelyik napban (a nap vege fele, amikor csak a 21:00-as adat van)
+
       dates.push(day[0].dt_txt.substring(5, 10))
       
     });
@@ -67,7 +66,7 @@ const DaysForecast = (props) => {
       return <Days
               key={index}
               date={elem[3]}
-              day={index === 0 ? 'Today' : dayList[dayNumber + index]}
+              day={dayList[dayNumber + index + 1]}
               icon={elem[2]}
               tempMin={Math.round(elem[0])}
               tempMax={Math.round(elem[1])}
