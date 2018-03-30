@@ -49,8 +49,8 @@ const DaysForecast = (props) => {
       highestTemps.push(sortHighest[0].main.temp_max);
 
       prevalentWeatherIcon.push(occurence(day).weather[0].icon);
-
-      dates.push(day[0].dt_txt.substring(5, 10))
+      console.log(day);
+      dates.push(day[0].dt_txt.substring(5, 10));
       
     });
     const daysArray = [

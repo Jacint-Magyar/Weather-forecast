@@ -31,7 +31,8 @@ class Searchbox extends Component {
         {this.state.error && <div>{this.state.error}</div>}
         <div className="help">
           <img src="./icon.png" alt=""/>
-          Not the location you meant? Try searching with the country-code (London,UK or London,GB).
+          Not the location you meant? Try searching with the country-code (
+          <i>"London,UK" or "London,GB"</i>).
         </div>
       </div>
     );
