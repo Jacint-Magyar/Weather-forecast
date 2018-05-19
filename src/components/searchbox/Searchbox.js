@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import './Searchbox.css';
 
 class Searchbox extends Component {
   constructor(props) {
-    super(props);
+    super();
 
     this.state = {
-      error: undefined
+      error: null
     };
   }
 
@@ -16,19 +18,19 @@ class Searchbox extends Component {
       this.setState(() => ({error}));
     } else {
       this.props.fetchData(this.searchInput.value, false);
-      this.setState(() => ({error: undefined}));
+      this.setState(() => ({error: null}));
     }
     this.searchInput.value = '';
   }
   
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSearch.bind(this)}>
-          <input ref={input => this.searchInput = input} type="text" placeholder="Enter your location"/>
-          <button>Get Weather Data</button>
+      <div className="searchbox">
+        <form className="search-form" onSubmit={this.handleSearch.bind(this)}>
+          <input className="btn-left" ref={(searchInput) => this.searchInput = searchInput} type="text" placeholder="Enter your location"/>
+          <button className="btn-right">Get Weather Data</button>
         </form>
-        {this.state.error && <div>{this.state.error}</div>}
+        {this.state.error && <p className="search-error">{this.state.error}</p>}
         <div className="help">
           <img src="./icon.png" alt=""/>
           Not the location you meant? Try searching with the country-code (
@@ -38,5 +40,9 @@ class Searchbox extends Component {
     );
   }
 }
+
+Searchbox.propTypes = {
+  fetchData: PropTypes.func.isRequired
+};
 
 export default Searchbox;

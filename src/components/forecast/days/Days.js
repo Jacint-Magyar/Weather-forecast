@@ -2,7 +2,7 @@ import React from 'react';
 
 const Days = ({ date, day, icon, tempMin, tempMax }) => {
   return (
-    <li className="unit">
+    <li>
       <div className="time">{date}
       <br/>
       {day}
@@ -10,7 +10,7 @@ const Days = ({ date, day, icon, tempMin, tempMax }) => {
       <img className="icon" src={`http://openweathermap.org/img/w/${icon}.png`} alt=""/>
       <div className="temp">
         <span className="temp-max">{tempMax}&#176;</span>
-        <span className="temp-min">{tempMin}&#176;</span>
+        <span className="temp-min">/ {tempMin}&#176;</span>
       </div>
     </li>
   );

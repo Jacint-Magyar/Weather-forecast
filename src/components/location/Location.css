@@ -1,0 +1,11 @@
+.location {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 2rem 0 3rem 0;
+}
+.city-name {
+  color: #222;
+}
+.country-name {
+  color: #737373;;
+}
