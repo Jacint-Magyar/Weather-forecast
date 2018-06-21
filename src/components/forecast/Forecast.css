@@ -7,10 +7,11 @@
   padding: 0;
 }
 .forecast li {
-  background: linear-gradient(to right, #cceeff, #99ddff);
-  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
   flex: 1;
   padding: .5rem 0;
+  border-radius: 4px;
 }
 
 @media screen and (max-width: 768px) {
@@ -22,7 +23,8 @@
   .forecast li {
     margin-top: 0;
     display: flex;
-    background: linear-gradient(to bottom, #cceeff, #99ddff);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    border-right: none;
   }
 }
 @media screen and (max-width: 768px) {
@@ -38,29 +40,28 @@
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--darkBlue);
 }
 .temp-min {
-  color: #595959;
+  color: var(--blue);
   font-size: 18px;
 }
 .temp-max {
-  color: #333;
+  color: var(--darkBlue);
   display: inline-block;
   margin-right: .5rem;
 }
 .celsius {
-  color: #595959;
   font-weight: 300;
 }
 .time {
-  color: #595959;
+  color: var(--blue);
   font-size: 18px;
   font-weight: 300;
   padding-bottom: .5em;
   letter-spacing: .1em;
 }
 .description {
-  color: #595959;
+  color: var(--darkBlue);
   font-family: 'Raleway', sans-serif;
 }

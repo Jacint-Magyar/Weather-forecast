@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Hours from './Hours';
-import { cToF } from '../../../helpers';
+import { cToF, capitalize } from '../../../helpers';
 
 const HoursForecast = ({ data, temp }) => {
   
@@ -11,7 +11,7 @@ const HoursForecast = ({ data, temp }) => {
     return <Hours
             key={index}
             hour={elem.dt_txt.substring(11, elem.dt_txt.length - 6) + 'h'}
-            description={elem.weather[0].description}
+            description={capitalize(elem.weather[0].description)}
             icon={elem.weather[0].icon}
             temp={temp === 'celsius' ? Math.round(elem.main.temp) : Math.round(cToF(elem.main.temp))}
           />;

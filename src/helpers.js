@@ -55,11 +55,12 @@ export const yMax = height - margin.top - margin.bottom;
 |--------------------------------------------------
 */
 
-export const handleResponse = (response) => {
-  return response.json().then(json => {
-    return response.ok ? json : Promise.reject(json);
-  });
-}
+export const handleResponse = (responseObj) => {
+  return responseObj.json()
+    .then(json => {
+      return responseObj.ok ? json : Promise.reject(json);
+    });
+};
 
 /**
 |--------------------------------------------------
@@ -73,4 +74,14 @@ export function cToF(celsius) {
 
 export function fToC(fahrenheit) {
   return ((fahrenheit - 32) * 5 / 9);
+}
+
+/**
+|--------------------------------------------------
+| Capitalize first letter
+|--------------------------------------------------
+*/
+
+export function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }

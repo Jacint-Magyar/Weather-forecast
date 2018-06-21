@@ -32,7 +32,7 @@ class Searchbox extends Component {
         </form>
         {this.state.error && <p className="search-error">{this.state.error}</p>}
         <div className="help">
-          <img src="./icon.png" alt=""/>
+          <img src="./info.png" alt=""/>
           Not the location you meant? Try searching with the country-code (
           <i>"London,UK" or "London,GB"</i>).
         </div>
